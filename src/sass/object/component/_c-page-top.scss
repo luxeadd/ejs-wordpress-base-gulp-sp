@@ -7,8 +7,16 @@
   position: fixed;
   bottom: rem(50);
   right: rem(20);
-  transition: .3s;
+  transition: .5s ease;
   cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.c-page-top.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: initial;
 }
 
 .c-page-top span:first-child {
