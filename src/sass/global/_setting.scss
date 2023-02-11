@@ -31,21 +31,37 @@ $bold: 700;
 // 色の指定
 ////////////////////
 
+// フォントウェイト
+$light: 300;
+$normal: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$ex-bold: 800;
+
+// z-index
+$header: 100;
+$drawer: 102;
+$drawer-back: 101;
+$page-top: 100;
+
+
+////////////////////
+// 色の指定
+////////////////////
+
 //色指定（共通性のあるものは出来る限り指定すると良い）
-$base: #000;
+$base-font-color: #000;
 $back: #333;
-$back2: #3D3D3D;
-$yellow:#F9F871;
 $white: #fff;
 
 
 body {
   font-family: $base-font-family;
-  color: $base;
+  color: $base-font-color;
   font-weight: $normal;
-  background: $base;
+  background: $back;
 }
-
 ////////////////////
 // メディアクエリとブレークポイントの設定
 ////////////////////
@@ -53,7 +69,7 @@ body {
 //ブレイクポイント
 $breakpoints: (
   sm: 600,
-  tab: 768,
+  md: 768,
   lg: 1024,
   xl: 1440,
 );
@@ -62,13 +78,13 @@ $breakpoints: (
 //メディアクエリー
 $mediaquerys: (
   sm: "screen and (min-width: #{map-get($breakpoints,'sm')}px)",
-  tab: "screen and (min-width: #{map-get($breakpoints,'tab')}px)",
+  md: "screen and (min-width: #{map-get($breakpoints,'md')}px)",
   lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
   xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",
 );
 
 // @include mq(){}で書くとブレークポイントが反映される（初期値はtab）
-@mixin mq($mediaquery: tab) {
+@mixin mq($mediaquery: md) {
   @media #{map-get($mediaquerys, $mediaquery)} {
     @content;
   }
@@ -87,17 +103,80 @@ $mediaquerys: (
 //768px以上を表示
 .u-desktop {
   display: none;
-  @include mq("tab") {
+  @include mq("md") {
     display: block;
   }
 }
 
 //モバイルのみ表示
 .u-mobile {
-  @include mq("tab") {
+  @include mq("md") {
     display: none;
   }
 }
+
+// フォントサイズ管理
+.u-fz12 {
+  font-size: rem(12);
+  @include mq(md) {
+    font-size: rem(12);
+  }
+}
+.u-fz14 {
+  font-size: rem(14);
+  @include mq(md) {
+    font-size: rem(14);
+  }
+}
+.u-fz16 {
+  font-size: rem(16);
+  @include mq(md) {
+    font-size: rem(16);
+  }
+}
+.u-fz18 {
+  font-size: rem(18);
+  @include mq(md) {
+    font-size: rem(18);
+  }
+}
+.u-fz20 {
+  font-size: rem(20);
+  @include mq(md) {
+    font-size: rem(20);
+  }
+}
+.u-fz22 {
+  font-size: rem(22);
+  @include mq(md) {
+    font-size: rem(22);
+  }
+}
+.u-fz24 {
+  font-size: rem(24);
+  @include mq(md) {
+    font-size: rem(24);
+  }
+}
+.u-fz26 {
+  font-size: rem(26);
+  @include mq(md) {
+    font-size: rem(26);
+  }
+}
+.u-fz28 {
+  font-size: rem(28);
+  @include mq(md) {
+    font-size: rem(28);
+  }
+}
+.u-fz30 {
+  font-size: rem(30);
+  @include mq(md) {
+    font-size: rem(30);
+  }
+}
+
 
 //スマホ時のみ電話リンク有効
 @media (min-width: 600px) {

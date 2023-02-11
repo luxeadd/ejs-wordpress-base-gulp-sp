@@ -20,7 +20,7 @@
     padding: 0  rem(20);
     height: inherit;
   
-    @include mq(tab) {
+    @include mq(md) {
       display: flex;
       padding-left: rem(25);
       padding-right: 0;
@@ -35,7 +35,7 @@
     align-items: center;
   
   
-    @include mq(tab) {
+    @include mq(md) {
       width: rem(95.4);
     
     }
@@ -90,7 +90,7 @@
   
   .p-header__menu {
     
-    @include mq(tab) {
+    @include mq(md) {
       margin-left: auto;
      
     }
